@@ -1,0 +1,35 @@
+{
+  "name": "bookverse-backend",
+  "version": "1.0.0",
+  "description": "Backend for Bookverse - book reviews platform",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "seed-admin": "node scripts/seedAdmin.js",
+    "seed-data": "node scripts/seedSampleData.js",
+    "cleanup-reviews": "node scripts/cleanupReviews.js",
+    "test": "jest --runInBand"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.8.0",
+    "joi": "^17.9.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.5.0",
+    "nodemailer": "^7.0.6"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "mongodb-memory-server": "^8.13.0",
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.4"
+  }
+}
