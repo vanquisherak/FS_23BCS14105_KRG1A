@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q1 Component Demo</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+        // Question 1: React Component 'Take'
+        const Take = ({ name }) => {
+            const displayName = name ?? 'guest';
+            return (
+                <div style={{ padding: '20px', fontFamily: 'Arial' }}>
+                    welcome, {displayName}!
+                </div>
+            );
+        };
+
+        function App() {
+            return (
+                <div>
+                    <Take name="John" />
+                    <Take name="Alice" />
+                    <Take />
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+
+     //  Question 2: Fetch API Usage Examples
+        fetch('https://api.example.com/data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ key: 'value' })
+        }).catch(err => console.log('POST fetch error:', err));
+
+        fetch('https://api.example.com/data')
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(err => console.log('GET fetch error:', err));
+    </script>
+</body>
+</html>
